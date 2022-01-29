@@ -336,8 +336,8 @@
     </section><!-- End Frequently Asked Questions Section -->
 
     <!-- ======= Contact Section ======= -->
-    <form>
-
+    <form method="POST">
+      {% csrf_token %}
     <section id="contact" class="contact">
       <div class="container" data-aos="fade-up">
 
@@ -374,49 +374,37 @@
             <div style="margin-bottom: 15px;" class="form-group mt-3 ">
               <div class="col-md-6 form-group form-control " style="margin-bottom: 13px; ">
                 <select class="form-select" style="color: #444444; border: none; margin: 0;"
-                  aria-label=".form-select-lg example">
-                  <option style="font-size: 14px;" selected>select</option>
-                  <option style="font-size: 14px;" value="1">One</option>
-                  <option style="font-size: 14px;" value="2">Two</option>
-                  <option style="font-size: 14px;" value="3">Three</option>
-                  <option style="font-size: 14px;" value="1">One</option>
-                  <option style="font-size: 14px;" value="2">Two</option>
-                  <option style="font-size: 14px;" value="3">Three</option>
-                  <option style="font-size: 14px;" value="1">One</option>
-                  <option style="font-size: 14px;" value="2">Two</option>
-                  <option style="font-size: 14px;" value="3">Three</option>
+                  aria-label=".form-select-lg example", name="service">
+                  
+                  <option style="font-size: 14px;" selected>Select service</option>
+                  
+                  <option style="font-size: 14px;" value="Translation">Translation</option>
                 </select>
               </div>
             </div>
 
 
             <div class="row">
-              <div class="col-md-6 form-group" style="margin-bottom: 13px;">
-                <select class="form-select" style="color: #444444; " aria-label=".form-select-lg example">
-                  <option style="font-size: 14px;" selected>select</option>
-                  <option style="font-size: 14px;" value="1">One</option>
-                  <option style="font-size: 14px;" value="2">Two</option>
-                  <option style="font-size: 14px;" value="3">Three</option>
-                  <option style="font-size: 14px;" value="1">One</option>
-                  <option style="font-size: 14px;" value="2">Two</option>
-                  <option style="font-size: 14px;" value="3">Three</option>
-                  <option style="font-size: 14px;" value="1">One</option>
-                  <option style="font-size: 14px;" value="2">Two</option>
-                  <option style="font-size: 14px;" value="3">Three</option>
+              <div class="col-md-6 form-group" style="margin-bottom: 13px;" >
+                <select class="form-select" style="color: #444444; " aria-label=".form-select-lg example" name='source'>
+                  <option style="font-size: 14px;" selected>Source language</option>
+                  <option style="font-size: 14px;" value="English">English</option>
+                  <option style="font-size: 14px;" value="Deutch">Deutch</option>
+                  <option style="font-size: 14px;" value="Russian">Russian</option>
+                  <option style="font-size: 14px;" value="French">French</option>
+                  <option style="font-size: 14px;" value="Korean">Korean</option>
+                  <option style="font-size: 14px;" value="Uzbek">Uzbek</option>
                 </select>
               </div>
               <div class="col-md-6 form-group">
-                <select class="form-select" style="color: #444444;; " aria-label=".form-select-lg example">
-                  <option style="font-size: 14px;" selected>select</option>
-                  <option style="font-size: 14px;" value="1">One</option>
-                  <option style="font-size: 14px;" value="2">Two</option>
-                  <option style="font-size: 14px;" value="3">Three</option>
-                  <option style="font-size: 14px;" value="1">One</option>
-                  <option style="font-size: 14px;" value="2">Two</option>
-                  <option style="font-size: 14px;" value="3">Three</option>
-                  <option style="font-size: 14px;" value="1">One</option>
-                  <option style="font-size: 14px;" value="2">Two</option>
-                  <option style="font-size: 14px;" value="3">Three</option>
+                <select class="form-select" style="color: #444444; " aria-label=".form-select-lg example" name="target">
+                  <option style="font-size: 14px;" selected>Target language</option>
+                  <option style="font-size: 14px;" value="English">English</option> 
+                  <option style="font-size: 14px;" value="Deutch">Deutch</option>
+                  <option style="font-size: 14px;" value="Russian">Russian</option>
+                  <option style="font-size: 14px;" value="French">French</option>
+                  <option style="font-size: 14px;" value="Korean">Korean</option>
+                  <option style="font-size: 14px;" value="Uzbek">Uzbek</option>
                 </select>
               </div>
             </div>
@@ -431,18 +419,14 @@
 
 
             <div class="form-group mt-3">
-              <input type="text" class="form-control" name="subject" id="subject" placeholder="Telefon raqamingiz"
+              <input type="text" class="form-control" name="phone" id="subject" placeholder="Telefon raqamingiz"
                 required>
             </div>
             <div class="form-group mt-3">
               <textarea class="form-control" name="message" rows="5" placeholder="Xabar..." required></textarea>
             </div>
-            <div class="my-3">
-              <div class="loading">Loading</div>
-              <div class="error-message"></div>
-              <div class="sent-message">Your message has been sent. Thank you!</div>
-            </div>
-            <div class="text-center"><button type="submit">Yuborish</button></div>
+            <br>
+            <div class="text-center"><button class="btn-success" type="submit">Yuborish</button></div>
 
           </div>
 
@@ -484,7 +468,7 @@
             <li><i class="bx bx-chevron-right"></i> <a href="#">Bosh sahifa</a></li>
             <li><i class="bx bx-chevron-right"></i> <a href="#">Biz haqimizda</a></li>
             <li><i class="bx bx-chevron-right"></i> <a href="#">Xizmatlar</a></li>
-            <li><i class="bx bx-chevron-right"></i> <a href="#">Xizmat ko'rsatish shartlari</a></li>
+            <li><i class="bx bx-chevron-right"></i> <a href="#">Xizmat ko'rsatish </a></li>
             <li><i class="bx bx-chevron-right"></i> <a href="#">Maxfiylik siyosati</a></li>
           </ul>
         </div>
@@ -500,7 +484,7 @@
         </div>
 
 
-        <div class="col-lg-3 col-md-6 footer-info">
+        <div class="col-md-6 footer-info">
           <h3>Lingvo.uz haqida</h3>
           <p>{{about.footer}} </p>
           <div class="social-links mt-3">

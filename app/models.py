@@ -116,21 +116,9 @@ class Partner(models.Model):
     about = models.ForeignKey(About,on_delete=models.CASCADE,related_name='about')
 
 class Contact(models.Model):
-    choices = (
-        (_('Translation'),_('Translation')),
-    )
-
-    service =  models.CharField(max_length=100,choices=choices)
-    choices2 = (
-        (_("English"),_("English")),
-        (_("Deutch"),_("Deutch")),
-        (_("Russian"),_("Russian")),
-        (_("French"),_("French")),
-        (_("Korean"),_("Korean")),
-        (_("Uzbek"),_("Uzbek")),
-    )
-    source =  models.CharField(max_length=100,choices=choices2)
-    target =  models.CharField(max_length=100,choices=choices2)
+    service =  models.CharField(max_length=100)
+    source =  models.CharField(max_length=100)
+    target =  models.CharField(max_length=100)
     name =  models.CharField(max_length=100)
     email =  models.CharField(max_length=100)
     phone =  models.CharField(max_length=100)
