@@ -56,26 +56,27 @@
   </div>
 
   <!-- ======= Header ======= -->
-  <header id="header" class="fixed-top d-flex align-items-center ">
-    <div class="container d-flex align-items-center justify-content-between">
+  <header id="header" class="fixed-top d-flex align-items-center " style="background-color: rgba(255, 255, 255, 0.835);">
+    <div class="container d-flex align-items-center justify-content-between" >
 
-      <h1 class="logo"><a href="index.html">Lingvo.uz</a></h1>
+      
+      <img width="230px" height="180px" src="{% static 'assets/img/lingvo.png' %}" alt="">
       <!-- Uncomment below if you prefer to use an image logo -->
-      <a href=index.html class="logo"><img src="{% static 'assets/img/logo.png' %}" alt="" class="img-fluid"></a>
+      <!-- <a href=index.html class="logo"><img src="{% static 'assets/img/logo.png' %}" alt="" class="img-fluid"></a> -->
 
       <nav id="navbar" class="navbar">
-        <ul>
-          <li><a class="nav-link scrollto active" href="#hero">Bosh sahifa</a></li>
-          <li><a class="nav-link scrollto" href="#about">Biz haqimizda</a></li>
-          <li><a class="nav-link scrollto" href="#services">Xizmatlar</a></li>
-          <li><a class="nav-link scrollto" href="#team">Jamoa</a></li>
+        <ul >
+          <li><a class="nav-link scrollto active" href="#hero" style="color: black;font-weight:700;">Bosh sahifa</a></li>
+          <li><a class="nav-link scrollto " href="#about" style="color: black; font-weight:700;">Biz haqimizda</a></li>
+          <li><a class="nav-link scrollto " href="#services" style="color: black; font-weight:700;">Xizmatlar</a></li>
+          <li><a class="nav-link scrollto " href="#team" style="color: black; font-weight:700;">Jamoa</a></li>
 
           <!-- <li><a href="blog.html">Blog</a></li> -->
-          <li><a class="nav-link scrollto" href="#contact">Aloqa</a></li>
-          <li class="dropdown"><a href="#"><span>Tillar</span> <i class="bi bi-chevron-down"></i></a>
+          <li><a class="nav-link scrollto " href="#contact" style="color: black; font-weight:700;">Aloqa</a></li>
+          <li class="dropdown "><a href="#" style="color: black; font-weight:700;"><span>Tillar</span> <i class="bi bi-chevron-down"></i></a>
             <ul class="navbar-response">
 
-              <li class="dropdown"><a href="#"> <i class="bi bi-chevron-right"></i></a></li>
+              <li class="dropdown"><a href="#" style="color: black; font-weight:700;"> <i class="bi bi-chevron-right"></i></a></li>
               <li><a href="#">O'zbek</a></li>
               <li><a href="#">rus</a></li>
               <li><a href="#">igliz</a></li>
@@ -101,16 +102,16 @@
       {% for baner in banner|slice:"1" %}
       <div class="carousel-item active">
         <div class="carousel-container">
-          <h2 class="animate__animated animate__fadeInDown">{{baner.title}} </h2>
-          <p class="animate__animated animate__fadeInUp">{{baner.text|safe}}</p>
+          <h2 class="animate__animated animate__fadeInDown" style="color: rgb(241, 183, 25);">{{baner.title}} </h2>
+          <p class="animate__animated animate__fadeInUp"><b>{{baner.text|safe}}</b></p>
         </div>
       </div>
       {%endfor%}
       {% for baner in banner %}
       <div class="carousel-item ">
         <div class="carousel-container">
-          <h2 class="animate__animated animate__fadeInDown">{{baner.title}} </h2>
-          <p class="animate__animated animate__fadeInUp">{{baner.text|safe}}</p>
+          <h2 class="animate__animated animate__fadeInDown" style="color: rgb(241, 183, 25);">{{baner.title}} </h2>
+          <p class="animate__animated animate__fadeInUp"><b>{{baner.text|safe}}</b></p>
         </div>
       </div>
       {%endfor%}
@@ -143,8 +144,8 @@
             <div class="icon-box">
               <div class="icon"><i class="bx bx-file"></i></div>
 
-              <h4 class="title"><a href="">{{advatage.title}}</a></h4>
-              <p class="description">{{advatage.description|safe}}</p>
+              <h4 class="title" ><a style="color: rgb(0, 0, 0);" href="">{{advatage.title}}</a></h4>
+              <p class="description" ><b>{{advatage.description|safe}}</b></p>
             </div>
           </div>
           {% endfor %}
@@ -305,17 +306,17 @@
 
 
     <!-- ======= Frequently Asked Questions Section ======= -->
-    <section id="faq" class="faq section-bg">
+    <section id="faq" class="faq section-bg" >
       <div class="container" data-aos="fade-up">
 
         <div class="section-title">
           <h2>Tez-tez so'raladigan savollar</h2>
         </div>
 
-        <div class="faq-list">
+        <div class="faq-list" >
           <ul>
             {% for question in questions %}
-            <li data-aos="fade-up" data-aos="fade-up" data-aos-delay="100">
+            <li data-aos="fade-up" data-aos="fade-up" data-aos-delay="100" >
               <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" class="collapse"
                 data-bs-target="#faq-list-1">{{question.question}} <i class="bx bx-chevron-down icon-show"></i><i
                   class="bx bx-chevron-up icon-close"></i></a>
@@ -426,7 +427,7 @@
               <textarea class="form-control" name="message" rows="5" placeholder="Xabar..." required></textarea>
             </div>
             <br>
-            <div class="text-center"><button class="btn-success" type="submit">Yuborish</button></div>
+            <div class="text-center"><button class="btn-success" type="submit" style="background-color: rgb(255, 196, 0); padding: 10px 35px;  border-radius: 15px; border: none;">Yuborish</button></div>
 
           </div>
 
